@@ -71,8 +71,6 @@ let ricardo = {
 
 ricardo.consumir(manzana);
 
-
-//Ejercicio 4
 //Creamos la clase PlantaCurativa que extiende de Consumible.
 class PlantaCurativa extends Consumible {
     constructor(nombre, poder) {
@@ -85,3 +83,26 @@ class PlantaCurativa extends Consumible {
         super.consumir(jugador);
     }
 }
+
+
+//Ejercicio 4
+let puntuaciones = [
+{ nombre: "Pablo", puntuacion: 180 },
+{ nombre: "Javier", puntuacion: 270 },
+{ nombre: "Raquel", puntuacion: 70 },
+{ nombre: "Mario", puntuacion: 310 },
+{ nombre: "Miriam", puntuacion: 90 },
+{ nombre: "Laura", puntuacion: 210 },
+];
+
+/Creamos un array donde guardaremos los jugadores con una puntuación mayor a 100.
+let mayorCien = [];
+//Iremos añadiendo dichos valores mediante un bucle que recorrerá el tamaño del array.
+for (let i = 0; i < puntuaciones.length; i++) {
+    let actual = puntuaciones[i];
+    if (actual['puntuacion'] > 100) {
+        mayorCien.push(actual)
+    }
+}
+//Mostraremos los valores del array ordenados de mayor a menor.
+console.log(mayorCien.sort((a,b) => b.puntuacion - a.puntuacion));
